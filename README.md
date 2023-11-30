@@ -68,3 +68,17 @@ The `app.py` script includes multiple functionalities:
 - **Example Feature Functions:** Example functions `BetaFeature` and `TestFeature` demonstrate feature-specific behaviors.
 
 For more details, refer to the comments in `app.py`.
+
+## 🚨 Security warning
+
+Using `globals()` in your Python code as described poses several security risks:
+
+1. **Arbitrary Code Execution**: It allows executing any function in the global scope, potentially leading to harmful effects if an attacker manipulates `func_name`.
+1. **Injection Vulnerabilities**: If `func_name` is influenced by external input without proper checks, it can lead to security vulnerabilities similar to SQL injection.
+1. **Unintended Side Effects**: Dynamically calling functions can cause unpredictable behavior or corrupt state, especially for functions not intended for such use.
+1. **Difficult Maintenance**: This coding pattern complicates understanding, maintaining, and debugging the codebase.
+1. **Encourages Bad Practices**: It promotes reliance on global state and functions with side effects, making code fragile and hard to maintain.
+
+To mitigate these risks, use whitelists, object-oriented approaches, or function mapping for more control and safer code.
+
+Remember, dynamic function invocation should be approached with caution and used only when necessary, ensuring all necessary safety checks and validations are in place.
