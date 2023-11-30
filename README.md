@@ -8,6 +8,7 @@ This Python application demonstrates the use of feature flags managed through Az
 
 - **Feature Flag Management:** Integrates with Azure App Configuration for managing feature flags.
 - **Environment-Specific Behavior:** Custom logic to determine whether the application is running in a `dev` or `prod` environment.
+- **Dynamic Feature Function Execution:** Dynamically executes functions based on the status of feature flags in the current environment.
 - **Docker Support:** Easily containerizable for consistent deployment across environments.
 
 ## Prerequisites
@@ -55,3 +56,15 @@ This Python application demonstrates the use of feature flags managed through Az
 ## Local Development
 
 For local development, ensure you have Python 3.9 or higher installed and run the application normally. Make sure to set the appropriate environment variables or use the `.env` file.
+
+## Application Details
+
+The `app.py` script includes multiple functionalities:
+
+- **Feature Flag Checking:** The `is_feature_flag_enabled` function checks if a specific feature flag is enabled in the given environment.
+- **Listing Feature Flags:** The `list_feature_flags` function lists all feature flags for the specified environment.
+- **Dynamic Function Execution:** The application dynamically executes functions corresponding to enabled feature flags.
+- **Environment Determination:** The `get_environment_label` function determines the current running environment (`dev` or `prod`).
+- **Example Feature Functions:** Example functions `BetaFeature` and `TestFeature` demonstrate feature-specific behaviors.
+
+For more details, refer to the comments in `app.py`.
